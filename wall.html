@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmation Wall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #E9C7CA, #D6A4A9);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: large;
+            font-weight: bold;
+            padding: 30px 50px;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #52322B;
+            text-decoration: none;
+            border-radius: 15px;
+            padding: 14px 20px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #52322B;
+            color: #E9C7CA;
+        }
+        .logo img {
+            width: 100%;
+            max-width: 250px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 100px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #affirmation-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; /* Space between columns */
+            width: 100%; /* Make it responsive */
+        }
+
+        .affirmation-collumn {
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            text-align: center;
+            background-color: #FDE4E6;
+            border: 2px solid;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #52322B;
+            height: 200px; /* Adjust height as needed */
+            padding: 20px; /* Add padding for better spacing */
+        }
+
+        .affirmation-collumn p {
+            font-size: 1.2em;
+            margin: 0; /* Remove default margin */
+        }
+
+        .top {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .top h1 {
+            color: #52322B;
+            font-size: 6dvh;
+            margin: 10px 0;
+            font-family: "Inria Serif", serif;
+        }
+
+        .top p {
+            color: #52322B;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="ETHERNAL-LOVE.png" alt="Logo"></div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="share.html">Share Affirmation </a>
+            <a href="about.html">About</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="top">
+            <h1>Affirmation Wall</h1>
+            <p>Read affirmations shared by others</p>
+        </div>
+        <div id="affirmation-container">
+            <!-- Affirmations will be displayed here -->
+        </div>
+    </div>
+    
+    <script>
+        function displayAffirmations() {
+            const affirmationContainer = document.getElementById('affirmation-container');
+            affirmationContainer.innerHTML = '';
+            
+            // Retrieve affirmations from local storage
+            const storedAffirmations = JSON.parse(localStorage.getItem('affirmations')) || [];
+
+            // If no affirmations are stored, set default affirmations
+            if (storedAffirmations.length === 0) {
+                const defaultAffirmations = [
+                    "You deserve to be loved and chosen, not almost or almost chosen.",
+                    "They may not have loved you, but you still risked your heart. You still tried for something. You still believed. And that is what makes you lucky, because that island what has made you strong.",
+                    "Listen to the part of yourself that knows there’s more out there for you.",
+                    "Give yourself permission to let go of what weighs heavily on your soul. You carry it all so well, but that does not mean that it is yours to hold.",
+                    "You were never asking for too much. You were simply just asking the wrong person.",
+                    "Not everyone you are ready to love will be ready to be loved by you.",
+                    "No one will ever fully be able to understand the internal battles you had to endure just to heal, just to grow, just to make it here today. Be proud of the way you fought to save yourself. Be proud of the way you survived."
+                ];
+                localStorage.setItem('affirmations', JSON.stringify(defaultAffirmations));
+                storedAffirmations = defaultAffirmations;
+            }
+
+            // Display each affirmation
+            storedAffirmations.forEach(affirmation => {
+                const affirmationColumn = document.createElement('div');
+                affirmationColumn.className = 'affirmation-collumn';
+                affirmationColumn.innerHTML = `
+                    <p>${affirmation}</p>
+                `;
+                affirmationContainer.appendChild(affirmationColumn);
+            });
+        }
+
+        // Call the function to display affirmations on page load
+        document.addEventListener("DOMContentLoaded", displayAffirmations);
+    </script>
+</body>
+</html>

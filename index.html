@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethernal Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #E9C7CA, #D6A4A9);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: large;
+            font-weight: bold;
+            padding: 30px 50px;
+            backdrop-filter: blur(10px);
+            position: fixed; /* Make the navbar fixed */
+            top: 0; /* Position it at the top */
+            left: 0; /* Align it to the left */
+            right: 0; /* Align it to the right */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+        .navbar a {
+            color: #52322B;
+            text-decoration: none;
+            border-radius: 15px;
+            padding: 14px 20px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #52322B;
+            color: #E9C7CA;
+        }
+        .logo img{
+            width: 100%;
+            max-width: 250px;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 200px 200px 250px; /* Added padding for better spacing */
+        }
+        .image-column lock{
+            position: fixed;
+            display: flex;
+            justify-content: right; /* Center the image */
+        }
+        .image-column {
+            flex: 1; /* Takes up one column */
+            display: flex;
+            justify-content: left; /* Center the image */
+        }
+        .text-column {
+            flex: 1; /* Takes up one column */
+            max-width: 600px; /* Limit text width */
+            text-align: right; /* Align text to the left */
+            color: #52322B; /* Set text color */
+        }
+        .text-column-love{
+            position: absolute; /* Position text over the image */
+            top: 40%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset to truly center */
+            color: #36211d; /* Set text color */
+            text-align: center; /* Center text */
+            z-index: 1; /* Ensure text is above the image */
+            max-width: 500px;
+            padding: 10em;
+            backdrop-filter: blur(5px)
+        }
+        .lovelock {
+            position: relative; /* Allow positioning of child elements */
+            text-align: center; /* Center text */
+        }
+
+        .lock {
+            display: flex;
+            justify-content: center; /* Center the image */
+            position: relative; /* Allow positioning of text over the image */
+            opacity: 70%;
+        }
+
+        .lock img {
+            max-width: 100%; /* Responsive image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .text-column p{
+            text-align: right;
+            font-size: 1.2em;
+        }
+        h1{
+            font-family: "Inria Serif", serif;
+            font-size: 5em;
+        }
+        .content img {
+            max-width: 100%; /* Responsive image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #52322B;
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #856b65;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="ETHERNAL-LOVE.png" alt="Logo"></div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="wall.html">Affirmation Wall</a>
+            <a href="about.html">About</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="image-column">
+            <img src="Love-Letter.png" alt="Image Description"> <!-- Replace with your image URL -->
+        </div>
+        <div class="text-column">
+            <h1>Love letters to the soul</h1>
+            <p>Unfolding petals of encouragement</p>
+            <a href="wall.html" class="button">Start Now</a>
+        </div>
+    </div>
+    <div class="content">
+        
+        <div class="text-column">
+            <h1>Share to the community</h1>
+            <p>Share your words of affirmations for others to read</p>
+            <a href="share.html" class="button">Share Now</a>
+        </div>
+        <div class="image-column">
+            <img src="Love-messages.png" alt="Image Description"> <!-- Replace with your image URL -->
+        </div>
+    </div>
+    <div class="content lovelock">
+        <div class="text-column-love">
+            <h1>Your feelings are VALID</h1>
+            <a href="wall.html" class="button">Start Now</a>
+        </div>
+        <div class="image-column lock">
+            <img src="Love-Lock.png" alt="Image Description"> <!-- Replace with your image URL -->
+        </div>
+    </div>
+</body>
+</html>

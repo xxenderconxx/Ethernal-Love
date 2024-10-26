@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmation Wall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #E9C7CA, #D6A4A9);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: large;
+            font-weight: bold;
+            padding: 30px 50px;
+            backdrop-filter: blur(10px);
+            position: fixed; /* Make the navbar fixed */
+            top: 0; /* Position it at the top */
+            left: 0; /* Align it to the left */
+            right: 0; /* Align it to the right */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+        .navbar a {
+            color: #52322B;
+            text-decoration: none;
+            border-radius: 15px;
+            padding: 14px 20px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #52322B;
+            color: #E9C7CA;
+        }
+        .logo img {
+            width: 100%;
+            max-width: 250px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping to the next line */
+            align-items: flex-start; /* Align items to the top */
+            justify-content: center; /* Center the columns */
+            padding: 100px 50px; /* Adjust padding for better spacing */
+            max-width: 1200px; /* Set a maximum width for the content */
+            margin: 0 auto; /* Center the content horizontally */
+        }
+        .about-us-collumn {
+            margin: 30px; /* Add margin for spacing */
+            text-align: center; /* Center the text */
+            background-color: #FDE4E6; /* Change background color */
+            border: 2px solid;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+            color: #52322B; /* Change text color */
+            height: 500px; /* Increased height for the column */
+            width: 1000px; /* You might want to adjust this width to be more responsive */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+        .about-us-collumn div{
+            padding: 20px;
+            font-size: 1.2em;
+        }
+        .top {
+            text-align: center; /* Center the text */
+            margin: 50px 0; /* Add some margin for spacing above and below */
+        }
+
+        .top h1 {
+            color: #52322B; /* Heading color */
+            font-size: 6dvh; /* Adjust font size for the heading */
+            margin: 10px 0; /* Add margin for spacing */
+            font-family: "Inria Serif", serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="ETHERNAL-LOVE.png" alt="Logo"></div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="wall.html">Affirmation Wall</a>
+            <a href="#about">About</a >
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="top">
+            <h1>About us</h1>
+        </div>
+        <div class="about-us-collumn">
+            <div>
+                <p><b>Our Story</b><br>
+                    Welcome to Love Letters to the Soul! 💌✨<br>
+                    We believe that words have the power to heal, uplift, and connect us. In a world that often rushes by, we’ve created this digital haven—a place where kindness blooms, and hearts find solace.<br>
+                    Our journey began with a simple idea: What if we could spread love, one affirmation at a time? And so, we set sail on this virtual voyage, guided by the North Star of compassion.<br><br>
+                    
+                    <b>Our Mission</b><br>
+                    At Love Letters to the Soul, our mission is clear:<br>
+                    Affirmations Everywhere: We’re on a quest to scatter affirmations like stardust across the digital sky. Whether you’re navigating stormy seas or basking in sunlight, we want our words to be your companions.<br>
+                    Community of Kindness: This isn’t just a website; it’s a gathering place. Here, you’ll find fellow travelers—people who believe in the magic of encouragement. Share your own affirmations, read others’, and let’s create a web of kindness together.<br>
+                    Heartfelt Whispers: Our team curates affirmations with love. Each word is carefully chosen, like a delicate brushstroke on the canvas of your soul. We believe that even a single positive thought can change someone’s day.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

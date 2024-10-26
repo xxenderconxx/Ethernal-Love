@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmation Wall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #E9C7CA, #D6A4A9);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: large;
+            font-weight: bold;
+            padding: 30px 50px;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #52322B;
+            text-decoration: none;
+            border-radius: 15px;
+            padding: 14px 20px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #52322B;
+            color: #E9C7CA;
+        }
+        .logo img {
+            width: 100%;
+            max-width: 250px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 100px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .affirmation-collumn {
+            margin: 30px;
+            text-align: center;
+            background-color: #FDE4E6;
+            border: 2px solid;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #52322B;
+            height: 500px;
+            width: 1000px;
+        }
+        .affirmation-collumn div {
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .form textarea {
+            width: 600px;
+            min-width: 300px;
+            max-width: 100%;
+            max-height: 470px;
+            background: none;
+            border: none;
+            outline: none;
+            color: #52322B;
+            font-size: 1.2em;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+            overflow: scroll;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        .top {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .top h1 {
+            color: #52322B;
+            font-size: 6dvh;
+            margin: 10px 0;
+            font-family: "Inria Serif", serif;
+        }
+
+        .top p {
+            color: #52322B;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .confirmation{
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #52322B;
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            cursor: not-allowed; /* Initially not allowed */
+            opacity: 0.5; /* Initially dimmed */
+        }
+        .button.enabled {
+            cursor: pointer; /* Change cursor when enabled */
+            opacity: 1; /* Make it fully visible */
+        }
+        .button:hover.enabled {
+            background-color: #856b65;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-container label {
+            position: relative;
+            padding-left:  30px;
+            cursor: pointer;
+        }
+
+        .checkbox-container label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #52322B;
+            border-radius: 4px;
+            background-color: white;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + label:before {
+            background-color: #52322B;
+            border-color: #52322B;
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + label {
+            color: #52322B;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="ETHERNAL-LOVE.png" alt="Logo"></div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="wall.html">Affirmation Wall</a>
+            <a href="about.html">About</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="top">
+            <h1>Affirmation Wall</h1>
+            <p>Share your words of affirmations for others to read</p>
+        </div>
+        <div class="affirmation-collumn">
+            <div>
+                <form class="form">
+                    <textarea placeholder="Enter your affirmation..." rows="1"></textarea>
+                </form>
+            </div>
+        </div>
+        <div class="confirmation">
+            <div class="checkbox-container">
+                <input type="checkbox" id ="terms" name="terms" required>
+                <label for="terms">I have read and agree to the Terms & Agreements.</label>
+            </div>
+            <button class="button" disabled>Submit</button>
+        </div>
+        
+    </div>
+    
+    <script>
+        const checkbox = document.getElementById('terms');
+        const button = document.querySelector('.button');
+        const textarea = document.querySelector('.form textarea');
+
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                button.disabled = false;
+                button.classList.add('enabled');
+            } else {
+                button.disabled = true;
+                button.classList.remove('enabled');
+            }
+        });
+
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const affirmation = textarea.value.trim();
+            if (affirmation) {
+                // Get existing affirmations from local storage
+                let affirmations = JSON.parse(localStorage.getItem('affirmations')) || [];
+
+                // Add the new affirmation
+                affirmations.push(affirmation);
+
+                // Save back to local storage
+                localStorage.setItem('affirmations', JSON.stringify(affirmations));
+
+                // Clear the textarea
+                textarea.value = '';
+            }
+        });
+
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+    </script>
+</body>
+</html>
